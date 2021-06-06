@@ -2,6 +2,7 @@ package org.example.sb;
 
 import org.example.sb.ch3.configuration.WithoutAnnoConfiguration;
 import org.example.sb.ch3.initializer.LearnApplicationInitializer;
+import org.example.sb.config.IDemoService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -33,5 +34,8 @@ public class DemoApplication {
 
         WithoutAnnoConfiguration withoutBean = context.getBean(WithoutAnnoConfiguration.class);
         System.out.println(withoutBean);
+
+        IDemoService demoService = context.getBean(IDemoService.class);
+        demoService.print();
     }
 }
